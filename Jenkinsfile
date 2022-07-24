@@ -29,7 +29,6 @@ pipeline {
             steps {
                 script {
         //        withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'SonarCloud') {
-                  withSonarQubeEnv(credentialsId: 'sonarqube-2', installationName: 'Sonarscanner_2') {
                  sh 'mvn clean package sonar:sonar'
                  }
     //                timeout(time: 3, unit: 'MINUTES') {
@@ -40,7 +39,6 @@ pipeline {
     //            }
            }
         }
-   }
  //       stage('Build the Image') {
 //            steps {
 //                script {
