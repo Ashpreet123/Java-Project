@@ -25,22 +25,22 @@ pipeline {
                 sh 'mvn clean package  -DskipTests'
             }
         }
-        stage('sonarqube checks') {
-            steps {
-                script {
-                withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'newmavenkey') {
+    //    stage('sonarqube checks') {
+      //      steps {
+        //        script {
+          //      withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'newmavenkey') {
         //          withSonarQubeEnv(credentialsId: 'sonarkey', installationName: 'SonarCloud') {
         //          sh 'mvn sonar:sonar'
         //          withSonarQubeEnv(credentialsId: 'sonarlogin', installationName: 'sonarqubelocally') {
-                  sh 'mvn sonar:sonar'    
+           //       sh 'mvn sonar:sonar'    
                       
-                 }
-                    timeout(time: 3, unit: 'MINUTES') {
-                       def qg = waitForQualityGate()
-                    if (qg.status != 'OK') {
-                       error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                        }
-                }
+             //    }
+               //     timeout(time: 3, unit: 'MINUTES') {
+                 //      def qg = waitForQualityGate()
+                   // if (qg.status != 'OK') {
+                     //  error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                       // }
+               // }
            }
         }
    }
