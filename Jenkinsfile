@@ -28,7 +28,7 @@ pipeline {
         stage('sonarqube checks') {
             steps {
                 script {
-                withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'SonarCloud') {
+                withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'Sonarcloud') {
         //          withSonarQubeEnv(credentialsId: 'sonarkey', installationName: 'SonarCloud') {
         //          sh 'mvn sonar:sonar'
         //          withSonarQubeEnv(credentialsId: 'sonarlogin', installationName: 'sonarqubelocally') {
