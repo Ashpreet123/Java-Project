@@ -25,10 +25,10 @@ pipeline {
                 sh 'mvn clean package  -DskipTests'
             }
         }
-    //    stage('sonarqube checks') {
-      //      steps {
-        //        script {
-                   withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'newmavenkey') {
+        stage('sonarqube checks') {
+            steps {
+                script {
+                   withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'Sonarmavenkey') {
         //          withSonarQubeEnv(credentialsId: 'sonarkey', installationName: 'SonarCloud') {
         //          sh 'mvn sonar:sonar'
         //          withSonarQubeEnv(credentialsId: 'sonarlogin', installationName: 'sonarqubelocally') {
