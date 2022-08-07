@@ -29,18 +29,18 @@ pipeline {
             steps {
                 script {
         //        withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'SonarCloud') {
-                   withSonarQubeEnv(credentialsId: 'newkeyforjenkins', installationName: 'Sonarscanner') {
+                  withSonarQubeEnv(credentialsId: 'newkeyforjenkins', installationName: 'newkey') {
                   sh 'mvn sonar:sonar'
           //        withSonarQubeEnv(credentialsId: 'sonarlogin', installationName: 'sonarqubelocally') {
           //        sh 'mvn sonar:sonar'    
                       
                  }
-                    timeout(time: 3, unit: 'MINUTES') {
-                       def qg = waitForQualityGate()
-                    if (qg.status != 'OK') {
-                       error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                        }
-                }
+               //     timeout(time: 3, unit: 'MINUTES') {
+                //       def qg = waitForQualityGate()
+                //    if (qg.status != 'OK') {
+                //       error "Pipeline aborted due to quality gate failure: ${qg.status}"
+//                       }
+  //              }
            }
         }
    }
