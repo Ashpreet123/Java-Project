@@ -17,7 +17,8 @@
   </dependencies>
   <build>
    <finalName>dockeransible</finalName>
-   </build>
+  
+  </build>
   <properties>
   <sonar.organization>ashpreet123</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
