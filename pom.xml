@@ -16,11 +16,11 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>dockeransible</finalName>
-    
-    </build>
+   <finalName>dockeransible</finalName>
+   </build>
   <properties>
   <sonar.organization>ashpreet123</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+   <sonar.projectkey>newkeyforjenkins</sonar.projectkey>
   </properties>
 </project>
