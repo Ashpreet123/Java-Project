@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
         //        withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'SonarCloud') {
-                   withSonarQubeEnv(credentialsId: 'SonarCloud', installationName: 'Sonarscanner') {
+                   withSonarQubeEnv(credentialsId: 'newkeyforjenkins', installationName: 'Sonarscanner') {
                   sh 'mvn sonar:sonar'
           //        withSonarQubeEnv(credentialsId: 'sonarlogin', installationName: 'sonarqubelocally') {
           //        sh 'mvn sonar:sonar'    
